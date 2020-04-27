@@ -45,9 +45,32 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 </div>
+<div class="col-md-4 col-md-offset-4">
+    <button type="button" class="btn btn-primary btn-block" onclick="javascript:json()">json</button>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+    function json() {
+        axios.post('/user/getjson/',{
+          ID: 12345
+        }
+      )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+    }
+</script>
 
 </body>
 
