@@ -16,10 +16,11 @@ def login(request):
         request.session['login'] = '已经登录'
         return render(request, 'index.html', context={'username': user})
     # get方法
-    print(request.GET['id'])
+   # print(request.GET['id'])
     return render(request, 'login.html')
 
 
+# 返回JSON数据
 def getjson(request):
     myjson = {
         'username': '周大哥',
@@ -31,6 +32,7 @@ def getjson(request):
     # return JsonResponse(listdata, safe=False)
 
 
+# 接收JSON数据
 def json2(request):
     result = json.loads(request.body)
     print(result['ID'])
